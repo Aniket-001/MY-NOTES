@@ -1,0 +1,276 @@
+/* CSS */
+
+:root{
+    --lght1:gold;
+    --lght2:aliceblue;
+    --lght3:#fff;
+    --lght4:rgb(145, 126, 22);
+    --lght5:#fff;
+    --lght6:rgb(207, 199, 151);
+    --lght7:rgb(219,218,218);
+    --lght8:black;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: var(--lght2);
+    display: flex;
+    flex-wrap:wrap ;
+    height:100vh;
+    background-image: url(Mynote.gif);
+    background-position: right -40rem top -7rem;
+    background-repeat: no-repeat;
+    background-size: 60rem;
+    background-attachment:fixed;
+}
+
+/*--header--- */
+.head{
+    background-color: var(--lght1);
+    height:5rem;
+    width:100vw;
+    text-align: center;
+    text-shadow: 3px 3px 3px #fff;
+    font-size: 3.5rem;
+    position: relative;
+    margin-bottom: 5rem;
+}
+.head h1{
+    height: inherit;
+    display: inline-block;
+    font-size: 3.5rem;
+    margin: auto 0;
+}
+
+/*--Add note button--*/
+.addNote{
+    position: fixed;
+    right:5rem;
+    top:7rem;
+    padding:0.5rem 1rem;
+    z-index: 1;
+}
+.addNote button{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor:pointer;
+    display: inline-block;
+    position:relative;
+}
+.addNote i{
+    transition: all .1s linear;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    padding: .5rem;
+    margin-right:.5rem;
+}
+.addNote button::before{
+    content: "";
+    position: absolute;
+    background-color: var(--lght1);
+    top:0;
+    left:-0.2rem;
+    height:3.5rem;
+    width:3.5rem;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all .2s linear;
+}
+.addNote button:hover::before{
+    background-color: var(--lght1);
+    width:14rem;
+    height:3.5rem;
+    border-radius: 20px;
+}
+.addNote span{
+    font-size: 2rem ;
+    display: inline-block;
+    height: inherit;
+    margin-left:.5rem;
+}
+.addNote button:hover i{
+    color:#fff;
+    transform: rotate(90deg);
+    background-color: transparent;
+}
+.addNote button:active{
+    transform: scale(.91);
+}
+
+/*--textarea--*/
+.txtarea{
+    height:20rem;
+    width:30rem;
+    margin:2rem 5rem; 
+    padding: 1rem 1rem;
+    background-color: var(--lght3);
+    position: relative;
+    border:2px solid none;
+    box-shadow: 3px 3px 8px 1px var(--lght6);
+    overflow-y:scroll ;
+}
+.txtback{
+    position: absolute;
+    background-color:var(--lght3);
+    color:var(--lght8);
+    margin:.5rem 0;
+    padding: 1rem;
+    font-size: 1.8rem;
+    width:93%;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.txtarea textarea{
+    background-color: var(--lght5);
+    color:var(--lght8);
+    position: absolute;
+    margin:.5rem 0;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    height:90%;
+    width:93%;
+    padding: 1rem;
+}
+.hide{
+    display: none;
+}
+.operation{
+    display:flex;
+    justify-content: space-around;
+}
+.edit,.delete{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color:#fff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding:.8rem;
+    margin: 0 .3rem;
+}
+.edit:active,.delete:active{
+    transform: scale(1.1);
+}
+.edit{
+    color: #06FF00;
+    background-color: #2ecc71;
+}
+.delete{
+    color: #FF1818;
+    background-color: #e08575;
+}
+.edit:hover{
+    color: #fff;
+    background-color: #27ae60;
+    filter:drop-shadow(0px 10px 8px var(--lght7));
+}
+.delete:hover{
+    color: #fff;
+    background-color:#e7321d;
+    filter:drop-shadow(0px 10px 8px var(--lght7));
+}
+.title{
+    background-color: var(--lght3);
+    font-size: 2rem;
+    width:50%;
+    color:grey;
+    font-weight: bold;
+    line-height: 3rem;
+    text-shadow: 2px 2px 15px var(--lght1);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--lght1);
+}
+footer{
+    height:5rem;
+    width:100vw;
+    background-color: var(--lght4);
+    text-align: end;
+    margin-top: auto;
+}
+footer h2{
+    display: inline-block;
+    height: inherit;
+    color:#fff;
+    vertical-align: middle;
+    margin-right: 6rem;
+    line-height: 5rem;
+}
+.msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:80vw;
+    margin: auto;
+    font-size: 4rem;
+    font-style: italic;
+    font-family: 'Sansita Swashed', cursive;
+    color: darkgrey;
+}
+
+.searchbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0;
+    right:3rem;
+    height: inherit;
+    font-size: 3rem;
+    text-shadow: none;
+}
+.search{
+    margin:1rem;
+    display: inline-block;
+    height:inherit;
+    width:15rem;
+    overflow: hidden;
+}
+.search input{
+    height:4rem;
+    width:100%;
+    border: none;
+    outline: none;
+    color:grey;
+    padding: 1rem;
+    padding-left: 3rem;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all .2s linear;
+}
+.search i{
+    position:absolute;
+    padding:5px;
+    font-size: 2rem;
+    top:9px;
+    right:65%;
+    color:blue;
+    z-index: 1;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    transition: all .2s linear;
+}
+.search i:hover{
+    box-shadow: 4px 4px 4px grey;
+    color:#fff;
+    background-color: blue;
+    outline: 2px 2px 3px blue;
+}
+.search i:active{
+    transform: scale(1.1);
+}
+
