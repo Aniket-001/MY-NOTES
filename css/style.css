@@ -24,7 +24,7 @@ body{
     display: flex;
     flex-wrap:wrap ;
     height:100vh;
-    background-image: url(Mynote.gif);
+    background-image: url(../img/Mynote.gif);
     background-position: right -40rem top -7rem;
     background-repeat: no-repeat;
     background-size: 60rem;
